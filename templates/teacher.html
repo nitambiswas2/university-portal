@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form action="{{url_for('teacher')}}" method="POST">
+        <div>{{ msg }}</div>
+    <div class="input_teacher">
+        <input type="text" name="id_no" placeholder="ID NO">
+        <br>
+        <input type="password" name="password" placeholder="PASSWORD">
+        <br>
+        <button >Submit</button>
+    </div>
+    </form>
+    <p>Don't have an account.<a href="{{url_for('registration_teacher')}}">Registration</a></p> -->
+    <div class="teacher_container">
+        <form action="{{url_for('teacher')}}" method="POST">
+          <div class="teacher_msg">{{ msg }}</div>
+          <div class="teacher_input">
+          <input class="teacher_input_id_no" type="text" name="id_no" placeholder="ID NO">
+          <br>
+          <input class="teacher_input_password" type="password" name="password" placeholder="PASSWORD">
+          <br>
+          <button class="teacher_input_button">Login</button>
+          </div>
+        </form>
+        <br><br>
+         <div class="teacher_paragraph_div"><p class="teacher_paragraph">Don't have an account.  <a href="{{url_for('registration_teacher')}}">Registration</a></p></div>
+    </div>
+</body>
+</html>

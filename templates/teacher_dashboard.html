@@ -1,0 +1,206 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Teacher Dashboard</title>
+</head>
+
+<body>
+
+<h2>Teacher Dashboard</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Name</th>
+    <th>Roll No</th>
+    <th>Subject 1</th>
+    <th>Subject 2</th>
+    <th>Subject 3</th>
+    <th>Save</th>
+</tr> -->
+
+<!-- 
+{% for student in students %}
+
+<form method="POST">
+
+<tr>
+
+<td>{{ student.name }}</td>
+
+<td>{{ student.roll_no }}</td>
+
+
+<td>
+{{ student.subject1 }}
+<br>
+<input type="text" name="marks1">
+<input type="hidden" name="subject1" value="{{ student.subject1 }}">
+</td>
+
+
+<td>
+{{ student.subject2 }}
+<br>
+<input type="text" name="marks2">
+<input type="hidden" name="subject2" value="{{ student.subject2 }}">
+</td>
+
+
+<td>
+{{ student.subject3 }}
+<br>
+<input type="text" name="marks3">
+<input type="hidden" name="subject3" value="{{ student.subject3 }}">
+</td>
+
+
+<input type="hidden" name="student_id" value="{{ student.id }}">
+
+
+<td>
+<button type="submit">Save Marks</button>
+</td>
+
+</tr>
+
+</form> -->
+<!-- {% set subjects = student.selected_subjects.split(',') %}
+
+<form method="POST">
+
+<input type="hidden" name="student_id" value="{{ student.id }}">
+
+<input type="hidden" name="subject1" value="{{ subjects[0] }}">
+<input type="hidden" name="subject2" value="{{ subjects[1] }}">
+<input type="hidden" name="subject3" value="{{ subjects[2] }}">
+
+
+<td>
+{{ subjects[0] }}
+<input type="text"
+name="marks1"
+value="{{ marks_dict.get((student.id, subjects[0]), '') }}">
+</td>
+
+
+<td>
+{{ subjects[1] }}
+<input type="text"
+name="marks2"
+value="{{ marks_dict.get((student.id, subjects[1]), '') }}">
+</td>
+
+
+<td>
+{{ subjects[2] }}
+<input type="text"
+name="marks3"
+value="{{ marks_dict.get((student.id, subjects[2]), '') }}">
+</td>
+
+
+<td>
+<button type="submit">Save Marks</button>
+</td>
+
+</form>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Teacher Dashboard</title>
+</head>
+
+<body>
+    <div class="teacher_dashboard">
+
+      <div class="teacher_dashboard_heading"><h2>Teacher Dashboard</h2></div>
+
+       <div class="teacher_dashboard_table">
+          <table border="1" cellpadding="10">
+
+           <tr>
+               <th>Name</th>
+               <th>Roll No</th>
+               <th>Subject 1</th>
+               <th>Subject 2</th>
+               <th>Subject 3</th>
+               <th>Save</th>
+           </tr>
+
+            {% for student in students %}
+
+                {% if student.selected_subjects %}
+
+                  {% set subjects = student.selected_subjects.split(',') %}
+
+                    <form method="POST">
+
+                        <tr>
+
+                          <td>{{ student.name }}</td>
+
+                          <td>{{ student.roll_no }}</td>
+
+                          <input type="hidden" name="student_id" value="{{ student.id }}">
+
+                          <input type="hidden" name="subject1" value="{{ subjects[0] }}">
+                          <input type="hidden" name="subject2" value="{{ subjects[1] }}">
+                          <input type="hidden" name="subject3" value="{{ subjects[2] }}">
+
+                           <td>
+                              {{ subjects[0] }}
+                              <br>
+                              <input type="text"
+                              name="marks1"
+                              value="{{ marks_dict.get((student.id, subjects[0]), '') }}">
+                           </td>
+
+                            <td>
+                               {{ subjects[1] }}
+                               <br>
+                               <input type="text"
+                               name="marks2"
+                               value="{{ marks_dict.get((student.id, subjects[1]), '') }}">
+                           </td>
+
+                           <td>
+                              {{ subjects[2] }}
+                              <br>
+                              <input type="text"
+                              name="marks3"
+                              value="{{ marks_dict.get((student.id, subjects[2]), '') }}">
+                           </td>
+
+                           <td>
+                             <button class="teacher_dashboard_table_save_button" type="submit">Save Marks</button>
+                           </td>
+
+                        </tr>
+
+                    </form>
+
+                {% endif %}
+
+            {% endfor %}
+
+          </table>
+       </div>
+   </div>
+
+</body>
+
+</html>

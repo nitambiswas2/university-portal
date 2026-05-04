@@ -1,0 +1,101 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Marks</title>
+</head>
+
+<body>
+
+<h2>Student Marks Page</h2>
+
+<form method="POST">
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Subjects</th>
+
+    {% for subject in subjects %}
+        <th>{{ subject }}</th>
+    {% endfor %}
+
+</tr>
+
+
+<tr>
+    <th>Marks</th>
+
+    {% for subject in subjects %}
+        <td>
+            <input type="text"
+                   name="marks_{{ subject }}"
+                  >
+        </td>
+    {% endfor %}
+
+</tr>
+
+</table>
+
+<br>
+
+<button type="submit">
+Submit Marks
+</button>
+
+</form>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Student Marks</title>
+</head>
+
+<body>
+<div class="student_marks">   
+   <div class="student_marks_heading"><h2 >Your Subjects and Marks</h2></div>
+
+   <div class="student_marks_table">
+      <table class="student_marks_table" border="1" cellpadding="30">
+
+      <tr>
+         <th>Subjects</th>
+
+         {% for subject in subjects %}
+             <th>{{ subject }}</th>
+         {% endfor %}
+       </tr>
+
+
+       <tr>
+          <th>Marks</th>
+
+            {% for subject in subjects %}
+
+             <td>
+
+              {% if subject in marks_dict %}
+                 {{ marks_dict[subject] }}
+              {% else %}
+                 Not uploaded yet
+              {% endif %}
+
+             </td>
+
+            {% endfor %}
+
+        </tr>
+
+      </table>
+    </div>
+</div>
+</body>
+
+</html>

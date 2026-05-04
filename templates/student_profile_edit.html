@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body >
+    <!-- <div class="student_profile_edit">
+         <div class="photo"></div>
+         <div class="student_edit_button"><button>edit</button></div>
+         <div class="name">
+            <p>Name Nitam Biswas</p>
+         </div>
+         <div class="roll_no">
+            <p>Roll No 12345</p>
+         </div>
+    </div> -->
+
+    <!-- <form method="POST" enctype="multipart/form-data">
+    <div style="width:150px;height:150px;border:2px solid black">
+
+    </div>
+    <br>
+    <input type="file" name="photo">
+    <br><br>
+    <button type="submit">Save</button>
+    </form> -->
+
+    <div class="student_profile_edit_container">
+      <div class="student_profile_edit_photo">
+         <form method="POST" enctype="multipart/form-data">
+             <div style="width:150px;height:150px;border:1px solid black">
+                 <img src="{{ url_for('static', filename='uploads/' + (student.photo if student.photo else 'default.png')) }}"width="150">
+             </div>
+             <br>
+             <input class="student_profile_edit_photo_input_file" type="file" name="photo">
+             <br>
+             <button class="student_profile_edit_photo_save_button" type="submit">Save</button>
+          </form>
+       </div>
+
+    <!-- <br>
+    <div style="border:2px solid black;width:250px">Name {{student.name}}</div>
+    <br>
+    <div style="border:2px solid black;width:250px">Roll No {{student.roll}}</div> -->
+        <br>
+        <div class="student_profile_edit_name_roll">
+           <form action="{{url_for('student_profile_edit')}}", method="POST">
+             <div class="student_profile_edit_name">Name:<input type="text" name="name" value="{{student1.name}}"></div>
+             <br>
+             <div class="student_profile_edit_roll"> ROLL No:<input type="text" name="roll_no" value="{{student1.roll_no}}"></div>
+             <br>
+             <button class="student_profile_edit_name_roll_submit_button" type="submit">Save</button>
+            </form>
+       </div>
+    </div>
+</body>
+</html>

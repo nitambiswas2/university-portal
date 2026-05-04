@@ -1,0 +1,321 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Student Subjects Page</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        #selectedSubjects {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: green;
+        }
+
+        select {
+            padding: 5px;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Student Subjects Page</h1>
+
+<div id="selectedSubjects">
+    Selected Subjects: None
+</div>
+
+<select id="subjectDropdown" onchange="selectSubject()">
+    <option value="">-- Select Subject --</option>
+    <option value="Mathematics">Mathematics</option>
+    <option value="Physics">Physics</option>
+    <option value="Chemistry">Chemistry</option>
+    <option value="Computer Science">Computer Science</option>
+</select>
+
+<br><br>
+
+<a href="{{url_for('student_subjects')}}">Back to Dashboard</a>
+
+<script>
+
+let chosenSubjects = [];
+
+function selectSubject() {
+
+    let dropdown = document.getElementById("subjectDropdown");
+    let subject = dropdown.value;
+
+    if (subject === "") return;
+
+    if (chosenSubjects.includes(subject)) {
+        alert("Subject already selected!");
+        return;
+    }
+
+    if (chosenSubjects.length >= 3) {
+        alert("You can select only 3 subjects.");
+        return;
+    }
+
+    chosenSubjects.push(subject);
+
+    document.getElementById("selectedSubjects").innerHTML =
+        "Selected Subjects: " + chosenSubjects.join(", ");
+
+}
+
+</script>
+
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Student Subjects</title>
+</head>
+
+<body>
+
+<h1>Student Subjects Page</h1>
+
+<h3>Your Selected Subjects:</h3>
+
+<ul>
+
+{% for subject in selected_subjects %}
+
+<li>{{ subject }}</li>
+
+{% endfor %}
+
+</ul>
+
+<form method="POST" action="/save_subjects">
+
+<select name="subjects" multiple required>
+
+<option value="Mathematics">Mathematics</option>
+
+<option value="Physics">Physics</option>
+
+<option value="Chemistry">Chemistry</option>
+
+<option value="Computer Science">Computer Science</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">
+
+Save 3 Subjects
+
+</button>
+
+</form>
+
+<br>
+
+<a href="/student_dashboard">
+
+Back to Dashboard
+
+</a>
+
+
+<script>
+
+document.querySelector("form").onsubmit = function(){
+
+let selected =
+document.querySelectorAll("select option:checked")
+
+if(selected.length != 3){
+
+alert("Please select exactly 3 subjects")
+
+return false
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+<title>Student Subjects</title>
+</head>
+
+<body>
+
+<h1>Student Subjects Page</h1>
+
+<h3>Your Selected Subjects:</h3>
+
+<ul>
+
+{% for subject in selected_subjects %}
+<li>{{ subject }}</li>
+{% endfor %}
+
+</ul>
+
+<form method="POST" action="/save_subjects">
+
+<select name="subjects" id="subjects" multiple size="4">
+
+<option value="Mathematics"
+{% if "Mathematics" in selected_subjects %}selected{% endif %}>
+Mathematics
+</option>
+
+<option value="Physics"
+{% if "Physics" in selected_subjects %}selected{% endif %}>
+Physics
+</option>
+
+<option value="Chemistry"
+{% if "Chemistry" in selected_subjects %}selected{% endif %}>
+Chemistry
+</option>
+
+<option value="Computer Science"
+{% if "Computer Science" in selected_subjects %}selected{% endif %}>
+Computer Science
+</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">Save 3 Subjects</button>
+
+</form>
+
+<br>
+
+<a href="/student_dashboard">Back to Dashboard</a>
+
+
+<script>
+
+const selectBox = document.getElementById("subjects");
+
+selectBox.addEventListener("change", function(){
+
+let selected =
+document.querySelectorAll("#subjects option:checked")
+
+if(selected.length > 3){
+
+alert("You can select only 3 subjects")
+
+this.options[this.selectedIndex].selected = false
+
+}
+
+})
+
+document.querySelector("form").onsubmit = function(){
+
+let selected =
+document.querySelectorAll("#subjects option:checked")
+
+if(selected.length != 3){
+
+alert("Please select exactly 3 subjects")
+
+return false
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<title>Student Subjects</title>
+</head>
+
+<body>
+    <div class="student_subjects">
+       <!-- <div  class="student_subjects_heading"><h1>Student Subjects Page</h1></div> -->
+
+       <div  class="student_subjects_selected_subjects">
+         <h3>Your Selected Subjects</h3>
+           <ul>
+               {% for subject in selected_subjects %}
+                 <li>{{ subject }}</li>
+               {% endfor %}
+           </ul>
+       </div>
+
+        <div  class="student_subjects_form">
+           <form method="POST" action="/save_subjects">
+             <!-- <input type="checkbox" name="subjects" value="Mathematics"
+             {% if "Mathematics" in checkbox_subjects %}checked{% endif %}>
+             Mathematics
+             <br>
+             <input type="checkbox" name="subjects" value="Physics"
+             {% if "Physics" in checkbox_subjects %}checked{% endif %}>
+             Physics
+             <br>
+             <input type="checkbox" name="subjects" value="Chemistry"
+             {% if "Chemistry" in checkbox_subjects %}checked{% endif %}>
+             Chemistry
+             <br>
+             <input type="checkbox" name="subjects" value="Computer Science"
+             {% if "Computer Science" in checkbox_subjects %}checked{% endif %}>
+             Computer Science -->
+             <input type="checkbox" name="subjects" value="Mathematics">Mathematics
+             <br>
+             <input type="checkbox" name="subjects" value="Physics">Physics
+             <br>
+             <input type="checkbox" name="subjects" value="Chemistry">Chemistry
+             <br>
+             <input type="checkbox" name="subjects" value="Computer Science">Computer Science
+             <br><br>
+             <button type="submit">Save 3 Subjects</button>
+            </form>
+            <br>
+        </div>
+       
+    </div>
+    <div  class="student_subjects_anchortag"><a href="/student_dashboard">Back to Dashboard</a></div> 
+
+    <script>
+
+     document.querySelector("form").onsubmit = function(){
+
+     let selected = document.querySelectorAll("input[name='subjects']:checked")
+
+     if(selected.length != 3){ 
+    
+     alert("Please select exactly 3 subjects")
+
+     return false}}
+
+    </script>
+</body>
+</html> 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="student_registration">
+        
+        <form action="{{url_for('registration_student')}}" method="POST">
+            <div class="student_registration_msg">{{msg}}</div>
+            <div class="student_registration_input_button">
+              <input class="student_registration_input_roll_no" type="text" name="roll_no" placeholder="ROLL NO">
+              <br>
+              <input class="student_registration_input_password" type="password" name="password" placeholder="PASSWORD">
+              <br>
+              <button class="student_registration_button" type="submit">Register</button>
+            </div>
+        </form>
+        <br><br>
+        <div class="student_registration_paragraph_div" ><P class="student_registration_paragraph">Already have an account.<a href="{{url_for('student')}}">login</a></P></div>
+    </div>
+</body>
+</html>

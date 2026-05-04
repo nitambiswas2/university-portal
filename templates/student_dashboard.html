@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="student_dashboard_all">
+       <div class="student_dashboard_profile">
+            <div class="student_dashboard_photo" style="width:150px;height:150px;border:1px solid black">
+              <img src="{{ url_for('static', filename='uploads/' + (student.photo if student.photo else 'default.png')) }}"width="150">
+              <br><br>
+              <a href="/student_profile_edit">Edit Profile</a>
+            </div>
+            
+            <div class="student_dashboard_name_roll_no">
+               Name: {{student1.name}}
+              <br>
+              Roll No: {{student1.roll_no}}
+            </div>
+        </div>
+       
+
+        <div class="student_dashboard_academic_values"> 
+            <a href="{{ url_for('student_subjects') }}"><div class="student_dashboard_subjects box">Subjects</div></a>
+            <a href="{{ url_for('student_marks') }}"><div class="student_dashboard_marks box">Marks</div></a>
+            <!-- <div class="student_dashboard_results box">Results</div>
+            <div class="student_dashboard_Projects box">Projects</div>
+            <div class="student_dashboard_Enrollment box">Enrollment</div>
+            <div class="student_dashboard_Payments box">Payments</div> -->
+        </div>
+    </div>
+    
+    
+
+    <!-- <div class="profile">
+        <a href="{{url_for('student_profile_edit')}}"><div class="photo"></div></a>
+        <div class="name_roll">
+            <p>Name : Nitam Biswas</p>
+            <p>Roll No : 12345</p>
+        </div>
+    </div> -->
+    <!-- <div class="profile">
+        <form>
+            <div class="photo">
+               <P>photo</P>
+            </div>
+            <br>
+            <div class="name">
+                <P>name</P>
+            </div>
+            <div class="roll_no">
+                <P>roll no</P>
+            </div>
+            <br>
+            <button type="submit">save</button>
+        </form>
+    </div>
+
+    <div class="academic_values">
+        <div class="subjects">
+
+        </div>
+        <div class="marks">
+
+        </div>
+        <div class="results">
+            
+        </div>
+    </div> -->
+
+</body>
+</html>

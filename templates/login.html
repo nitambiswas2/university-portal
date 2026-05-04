@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login_heading"><h1>West Bengal University</h1></div>
+    <div class="login_button_container">
+        <!-- <p class="login_paragraph">Login Panel</p> -->
+        <button id="login_button_student" class="login_button" onclick="window.location.href='/student'">STUDENT<p>click here to login</p></button>
+        <br>
+        <button id="login_button_teacher" class="login_button" onclick="window.location.href='/teacher'">TEACHER<p>click here to login</p></button>
+    </div>
+</body>
+</html>

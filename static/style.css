@@ -1,0 +1,893 @@
+.button_login {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100px;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.input_student {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100px;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+.input_teacher {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 100px;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+/* .photo {
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    background-color: aqua;
+    
+} */
+
+/* .details {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    margin-top: 20px;
+} */
+
+/* .profile {
+    margin-left: 100px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+} */
+
+/* .name {
+   height: 20px;
+    width: 100px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+} */
+
+/* .roll_no{
+   height: 20px;
+    width: 100px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+  
+    
+} */
+
+.photo {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+}
+
+p {
+    font-size: 20px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.name_roll {
+    margin-left: 30px;
+}
+
+.name {
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    margin-top: 50px;
+}
+
+.roll_no {
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    margin-top: 50px;
+}
+
+.student_profile_edit {
+   display: flex;
+   flex-direction: column;
+   margin-left: 1px;
+   align-items: center;
+}
+
+.student_edit_button {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* student_dashboard.html */
+
+.student_dashboard_profile {
+    display: flex;
+    align-items: baseline;
+    font-size: 20px;
+    margin-left: 70px;
+    margin-top: 50px;
+    display: flex;
+    align-items: flex-start; /* aligns text to top of image */
+    gap: 20px; /* space between photo and text */
+
+    height: 398px;
+    width: 400px;
+    /* border: 1px solid black; */
+    background-color: rgb(199, 238, 250) ;
+}
+
+.student_dashboard_photo {
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.student_dashboard_photo a{
+    text-decoration: none;
+    /* height: 50px;
+    width: 80px; */
+    border: 1px solid black;
+    background-color: rgb(95, 93, 93);
+    color: white;
+}
+
+.student_dashboard_name_roll_no {
+    margin-left: 1px;
+    margin-right: 70px;
+    margin-bottom: 200px;
+    height: 500px;
+    margin-top: 50px;
+}
+
+/* .student_dashboard_anchortag {
+    margin-left: 100px;
+    margin-top: 20px;
+} */
+
+/* student_profile_edit.html */
+
+.student_profile_edit_container{
+    height: 450px;
+    width: 500px;
+    /* border: 1px solid black; */
+    margin-left: 400px;
+    margin-top: 30px;
+    background-color: rgb(199, 238, 250) ;
+}
+
+.student_profile_edit_photo {
+    display: flex;
+    margin-left: 30%;
+    margin-right: 0px;
+    padding-top: 10px;
+}
+
+.student_profile_edit_photo_input_file{
+    margin-left: 35px;
+    /* background-color: rgb(107, 105, 105);
+    color: white;
+    border: 1px solid black; */
+}
+
+.student_profile_edit_photo_save_button{
+    margin-top: 10px;
+    margin-left: 35px;
+    width: 83px;
+    background-color: rgb(107, 105, 105);
+    color: white;
+    border: 1px solid black;
+}
+
+.student_profile_edit_name_roll {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-top: 20px;
+    margin-right: 100px;
+    border-top: 1px solid rgb(200, 197, 197);
+    width: 400px;
+}
+
+.student_profile_edit_name{
+    margin-top: 40px;
+    margin-left: 100px;
+}
+
+.student_profile_edit_roll{
+    margin-left: 100px;
+}
+
+.student_profile_edit_name_roll_submit_button{
+    width: 83px;
+    margin-left: 135px;
+    background-color: rgb(107, 105, 105);
+    color: white;
+    border: 1px solid black;
+}
+
+.student_dashboard_academic_values {
+    /* height: 500px;
+    width: 700px;
+    border: 2px solid black;
+    margin-left: 10px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px; */
+    width: 700px;
+    height: 350px;
+
+    /* border: 2px solid black; */
+
+    margin-left: 40px;
+    margin-top: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px 25px ;
+    padding: 25px;
+
+    background-color: rgb(199, 238, 250) ;
+}
+
+.student_dashboard_academic_values a {
+    text-decoration: none;
+    /* color: white; */
+}
+
+
+.student_dashboard_all {
+    display: flex;
+    gap: 25px;
+}
+
+/* .student_dashboard_subjects {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .student_dashboard_marks {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* .student_dashboard_results {
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.box {
+    /* width: calc(33.33% - 10px); */
+    height: 80px;
+    /* aspect-ratio: 1 / 1; */
+    border: 1px solid black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 700;
+    background-color: rgb(123, 122, 122);
+    color: white;
+    /* text-decoration: none; */
+}
+
+/* login.html */
+
+/* .body{
+    background-color: rgb(84, 198, 229);
+} */
+
+.login_heading {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(225, 246, 253) ;
+}
+
+.login_button_container {
+    width: 1000px;
+    height: 400px;
+    /* border: 2px solid black; */
+    margin-top: 70px;
+    margin-left: 150px;                   
+    display: flex;
+    /* justify-content: center;*/
+    /* align-items: center;*/
+    /* flex-direction: column; */
+    background-color: rgb(199, 238, 250) ;
+}
+
+/* .login_button {
+    height: 60px;
+    width: 200px;
+    margin-left: 30%;
+    font-weight: 700;
+    
+} */
+
+#login_button_student {
+    margin-top: 30px;
+    margin-left: 30px;
+    height: 70px;
+    width: 200px;
+    background-color: rgb(107, 105, 105);
+    border: 1px solid black;
+    font-size: 20px;
+    color: white;
+    gap: 0px;
+}
+
+#login_button_student p {
+   font-size: 13px;
+   margin-top: 5px;
+   margin-bottom: 0px;
+   color: rgb(213, 212, 212);
+}
+
+
+#login_button_teacher {
+    margin-bottom: 150px;
+    margin-top: 30px;
+    height: 70px;
+    width: 200px;
+    margin-left: 30px;
+    background-color: rgb(107, 105, 105);
+    border: 1px solid black;
+    font-size: 20px;
+    color: white;
+}
+
+#login_button_teacher p {
+   font-size: 13px;
+   margin-top: 5px;
+   margin-bottom: 0px;
+   color: rgb(213, 212, 212);
+}
+
+.login_paragraph {
+    margin-left: 80px;
+    padding-top: 5px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* student.html */
+
+.student_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-top: 50px;
+    height: 400px;
+    width: 700px;
+    /* border: 2px solid black; */
+    background-color: rgb(199, 238, 250) ;
+}
+
+.student_input_roll_no {
+    margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.student_input_password {
+    margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.student_input_button {
+    margin-bottom: 20px;
+    height: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+    width: 274px;
+    margin-bottom: 0px;
+}
+
+.student_msg {
+    margin-left: 215px;
+    font-size: 20px;
+    color: red;
+}
+
+.student_paragraph_div{
+    height: 80px;
+    width: 400px;
+    border-top: 1px solid black;
+    margin-left: 135px;
+    border-top: 1px solid rgb(188, 186, 186);
+}
+
+.student_paragraph_div a{
+   text-decoration: none;
+   color: white;
+}
+
+.student_paragraph {
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    margin-left: 55px;
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 30px;
+    background-color: rgb(128, 125, 125);
+    color: rgb(207, 206, 206);
+
+}
+
+
+/* student_subjects */
+
+.student_subjects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    width: 500px;
+    /* border: 2px solid black; */
+    margin-left: 400px;
+    margin-top: 30px;
+    background-color: rgb(199, 238, 250) ;
+}
+
+/* .student_subjects_heading{
+    margin-top: 0px;
+} */
+
+.student_subjects_selected_subjects {
+    margin-top: 0px;
+    border: 1px solid black;
+    width: 200px;
+    padding-left: 10px;
+    background-color: rgb(174, 229, 246) ;
+    
+}
+
+.student_subjects_form {
+    margin-top: 50px;
+    
+}
+
+.student_subjects_form button {
+    background-color: rgb(109, 108, 108);
+    color: white;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.student_subjects_anchortag {
+    margin-top: 80px;
+    margin-right: 20px;
+    margin-left: 580px;
+}
+
+.student_subjects_anchortag a {
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: rgb(144, 143, 143);
+    color: white;
+}
+
+/* student_marks.html */
+
+.student_marks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+    /* border: 2px solid black; */
+    height: 300px;
+    width: 700px;
+    margin-left: 300px;
+    background-color: rgb(199, 238, 250) ;
+}
+
+.student_marks_heading{
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.student_marks_table{
+    margin-bottom: 0px;
+    background-color: rgb(174, 229, 246) ;
+}
+
+/* teacher.html */
+
+.teacher_container {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 40%;
+    margin-top: 10%; */
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-top: 50px;
+    height: 400px;
+    width: 700px;
+    /* border: 2px solid black; */
+    background-color: rgb(199, 238, 250) ;
+}
+
+.teacher_input_id_no {
+    /* margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px; */
+
+    margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.teacher_input_password {
+    /* margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px; */
+
+    margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.teacher_input_button {
+    /* margin-bottom: 20px;
+    height: 30px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 100px; */
+
+    margin-bottom: 20px;
+    height: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+    width: 274px;
+    margin-bottom: 0px;
+}
+
+.teacher_msg {
+    /* font-size: 20px;
+    color: red; */
+
+    margin-left: 215px;
+    font-size: 20px;
+    color: red;
+}
+
+.teacher_paragraph_div{
+    height: 80px;
+    width: 400px;
+    border-top: 1px solid black;
+    margin-left: 135px;
+    border-top: 1px solid rgb(188, 186, 186);
+}
+
+.teacher_paragraph_div a{
+   text-decoration: none;
+   color: white;
+}
+
+.teacher_paragraph {
+    /* font-size: 20px; */
+
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    margin-left: 55px;
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 30px;
+    background-color: rgb(128, 125, 125);
+    color: rgb(207, 206, 206);
+}
+
+/* teacher_dashboard.html */
+
+.teacher_dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    height: 550px;
+    width: 1000px;
+    /* border: 1px solid black; */
+    margin-left: 160px;
+    background-color: rgb(233, 243, 248) ;
+}
+
+.teacher_dashboard_heading{
+    margin-bottom: 15px;
+}
+
+.teacher_dashboard_table{
+    background-color: rgb(157, 223, 243) ;
+}
+
+.teacher_dashboard_table_save_button{
+    background-color: rgb(88, 86, 86);
+    color: white;
+    border: 1px solid black;
+}
+
+/* student registration */
+
+.student_registration {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 40%;
+    margin-top: 10%; */
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-top: 50px;
+    height: 400px;
+    width: 700px;
+    /* border: 2px solid black; */
+    background-color: rgb(199, 238, 250) ;
+}
+
+.student_registration_input_roll_no {
+    /* margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px; */
+
+    margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.student_registration_input_password {
+    /* margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px; */
+
+    margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.student_registration_button {
+    /* margin-bottom: 20px;
+    height: 30px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 100px; */
+
+    margin-bottom: 20px;
+    height: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+    width: 274px;
+    margin-bottom: 0px;
+}
+
+.student_registration_msg {
+    /* font-size: 20px;
+    color: red; */
+
+    margin-left: 210px;
+    font-size: 20px;
+    color: red;
+}
+
+.student_registration_paragraph_div{
+    height: 80px;
+    width: 400px;
+    border-top: 1px solid black;
+    margin-left: 135px;
+    border-top: 1px solid rgb(188, 186, 186);
+}
+
+.student_registration_paragraph_div a{
+   text-decoration: none;
+   color: white;
+}
+
+.student_registration_paragraph {
+    /* font-size: 20px; */
+
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    margin-left: 55px;
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 30px;
+    background-color: rgb(128, 125, 125);
+    color: rgb(207, 206, 206);
+}
+
+/* teacher registration */
+
+.teacher_registration {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 40%;
+    margin-top: 10%; */
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 300px;
+    margin-top: 50px;
+    height: 400px;
+    width: 700px;
+    /* border: 2px solid black; */
+    background-color: rgb(199, 238, 250) ;
+}
+
+.teacher_registration_input_id_no {
+    /* margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px; */
+
+    margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.teacher_registration_input_password {
+    /* margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px; */
+
+    margin-bottom: 20px;
+    height: 50px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+}
+
+.teacher_registration_button {
+    /* margin-bottom: 20px;
+    height: 30px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 100px; */
+
+    margin-bottom: 20px;
+    height: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 200px;
+    width: 274px;
+    margin-bottom: 0px;
+}
+
+.teacher_registration_msg {
+    /* font-size: 20px;
+    color: red; */
+
+    margin-left: 210px;
+    font-size: 20px;
+    color: red;
+}
+
+.teacher_registration_paragraph_div{
+    height: 80px;
+    width: 400px;
+    border-top: 1px solid black;
+    margin-left: 135px;
+    border-top: 1px solid rgb(188, 186, 186);
+}
+
+.teacher_registration_paragraph_div a{
+   text-decoration: none;
+   color: white;
+}
+
+.teacher_registration_paragraph {
+    /* font-size: 20px; */
+
+    font-size: 20px;
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+    margin-left: 55px;
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+    margin-top: 30px;
+    background-color: rgb(128, 125, 125);
+    color: rgb(207, 206, 206);
+}
