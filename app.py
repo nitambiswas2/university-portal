@@ -26,16 +26,29 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #    database="university_portal1" 
 # )
 
-db = mysql.connector.connect(
-   host=os.getenv("DB_HOST"),
-   user=os.getenv("DB_USER"),
-   password=os.getenv("DB_PASSWORD"),
-   database=os.getenv("DB_NAME")
-)
+# db = mysql.connector.connect(
+#    host=os.getenv("DB_HOST"),
+#    user=os.getenv("DB_USER"),
+#    password=os.getenv("DB_PASSWORD"),
+#    database=os.getenv("DB_NAME")
+# )
+
+try:
+    db = mysql.connector.connect(
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME"),
+        port=int(os.getenv("DB_PORT", 3306))
+    )
+    cursor = db.cursor(dictionary=True)
+    print("Database connected successfully!")
+except Exception as e:
+    print(f"Database connection failed: {e}")
 
 app.secret_key = os.getenv("SECRET_KEY")
 
-cursor = db.cursor(dictionary=True)
+# cursor = db.cursor(dictionary=True)
 
 @app.route("/", methods=["GET", "POST"])
 def homepage():
