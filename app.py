@@ -3,9 +3,12 @@ import mysql.connector
 import re 
 import os
 from werkzeug.utils import secure_filename
+# from werkzeug.security import generate_password_hash, check_password_hash
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "secretkey"
+# app.secret_key = "secretkey"
 
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -16,12 +19,21 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 #     "image": "default.png"
 # }
 
+# db = mysql.connector.connect(
+#    host="localhost",
+#    user="root",
+#    password="121997",
+#    database="university_portal1" 
+# )
+
 db = mysql.connector.connect(
-   host="localhost",
-   user="root",
-   password="121997",
-   database="university_portal1" 
+   host=os.getenv("DB_HOST"),
+   user=os.getenv("DB_USER"),
+   password=os.getenv("DB_PASSWORD"),
+   database=os.getenv("DB_NAME")
 )
+
+app.secret_key = os.getenv("SECRET_KEY")
 
 cursor = db.cursor(dictionary=True)
 
@@ -66,6 +78,7 @@ def registration_student():
    if request.method == "POST":
       roll_no = request.form.get("roll_no")
       password = request.form.get("password")
+      # hashed_password = generate_password_hash(password)
 
       if roll_no and password:
          cursor = db.cursor(dictionary=True)
