@@ -652,6 +652,19 @@ def teacher_dashboard():
         marks_dict=marks_dict
     )
 
+@app.route("/create_tables")
+def create_tables():
+    cursor = db.cursor()
+    
+    cursor.execute("""
+        ALTER TABLE students 
+        MODIFY COLUMN id INT NOT NULL AUTO_INCREMENT
+    """)
+    
+    db.commit()
+    cursor.close()
+    return "Tables fixed!"
+
 
 if __name__ == "__main__":
  app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
