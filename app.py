@@ -43,7 +43,7 @@ try:
         database=os.getenv("DB_NAME"),
         port=int(os.getenv("DB_PORT", 3306))
     )
-    cursor = db.cursor(dictionary=True)
+    cursor = db.cursor(dictionary=True, buffered=True)
     print("Database connected successfully!")
 except Exception as e:
     print(f"Database connection failed: {e}")
@@ -65,7 +65,7 @@ def student():
       password = request.form.get("password")
 
       if roll_no and password:
-         cursor = db.cursor(dictionary=True)
+         cursor = db.cursor(dictionary=True, buffered=True)
 
          sql = "select * from students where roll_no =%s and password=%s"
          cursor.execute(sql,(roll_no, password,))
@@ -96,7 +96,7 @@ def registration_student():
       # hashed_password = generate_password_hash(password)
 
       if roll_no and password:
-         cursor = db.cursor(dictionary=True)
+         cursor = db.cursor(dictionary=True, buffered=True)
 
          sql = "select * from students where roll_no = %s and password = %s"
          cursor.execute(sql, (roll_no, password,))
@@ -147,7 +147,7 @@ def student_profile_edit():
    #      return redirect(url_for('student_dashboard'))
 
    # return render_template("student_profile_edit.html", student=student_data)
-   cursor = db.cursor(dictionary=True)
+   cursor = db.cursor(dictionary=True, buffered=True)
    # student1 = None
 
    if request.method == "POST":
@@ -171,7 +171,7 @@ def student_profile_edit():
       roll_no = request.form.get("roll_no")
 
       if name and roll_no:
-         cursor = db.cursor(dictionary=True)
+         cursor = db.cursor(dictionary=True, buffered=True)
 
          sql ="UPDATE students SET name=%s WHERE roll_no=%s"
          cursor.execute(sql, (name, roll_no,))
@@ -268,7 +268,7 @@ def student_marks():
    if 'logginid' not in session:
         return redirect('/')
 
-   cursor = db.cursor(dictionary=True)
+   cursor = db.cursor(dictionary=True, buffered=True)
 
     # get student's selected subjects
    cursor.execute(
@@ -315,7 +315,7 @@ def teacher():
       password = request.form.get("password")
 
       if id_no and password:
-         cursor = db.cursor(dictionary=True)
+         cursor = db.cursor(dictionary=True, buffered=True)
 
          sql = "select * from teachers where id_no =%s and password=%s"
          cursor.execute(sql,(id_no, password,))
@@ -344,7 +344,7 @@ def registration_teacher():
       password = request.form.get("password")
 
       if id_no and password:
-         cursor = db.cursor(dictionary=True)
+         cursor = db.cursor(dictionary=True, buffered=True)
 
          sql = "select * from teachers where id_no = %s and password = %s"
          cursor.execute(sql, (id_no, password,))
