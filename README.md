@@ -21,7 +21,7 @@ built with Flask and MySQL.
 - Deployment: Railway
 
 ## Live Demo
-🔗 Coming soon
+🔗 https://university-portal.up.railway.app/
 
 ## How It Works
 - **Student** logs in → selects subjects → 
