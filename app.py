@@ -654,63 +654,6 @@ def teacher_dashboard():
         marks_dict=marks_dict
     )
 
-@app.route("/create_tables")
-def create_tables():
-    cursor = db.cursor()
-    
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS students (
-            id INT NOT NULL AUTO_INCREMENT,
-            roll_no VARCHAR(50),
-            password VARCHAR(50),
-            name VARCHAR(100),
-            photo VARCHAR(200),
-            selected_subjects VARCHAR(200),
-            PRIMARY KEY (id)
-        )
-    """)
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS teachers (
-            id INT NOT NULL AUTO_INCREMENT,
-            id_no VARCHAR(50),
-            password VARCHAR(50),
-            PRIMARY KEY (id)
-        )
-    """)
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS marks (
-            id INT NOT NULL AUTO_INCREMENT,
-            student_id INT,
-            subject VARCHAR(100),
-            marks INT,
-            PRIMARY KEY (id)
-        )
-    """)
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS students1 (
-            id INT NOT NULL AUTO_INCREMENT,
-            name VARCHAR(100),
-            roll VARCHAR(50),
-            photo VARCHAR(200),
-            PRIMARY KEY (id)
-        )
-    """)
-
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS users (
-            id INT NOT NULL AUTO_INCREMENT,
-            username VARCHAR(50),
-            password VARCHAR(50),
-            PRIMARY KEY (id)
-        )
-    """)
-
-    db.commit()
-    cursor.close()
-    return "All tables created successfully!"
 
 
 if __name__ == "__main__":
